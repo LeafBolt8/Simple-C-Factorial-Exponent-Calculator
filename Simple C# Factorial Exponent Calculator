@@ -1,0 +1,46 @@
+using System;
+class Program {
+    public static void Main(String[] args) {
+
+        Console.WriteLine("Select an Option, 1 for Factorial Calculator, and 2 for Exponent Calculator");
+        int select = Convert.ToInt32(Console.ReadLine());
+        
+        Console.WriteLine("");
+        
+        int answer = 1;
+        if (select == 1) {
+            Console.WriteLine("FACTORIAL CALCULATOR");
+            Console.WriteLine("Enter a value: ");
+            int input = Convert.ToInt32(Console.ReadLine()); 
+            for (int i = 1; i <= input; i++){
+                answer *= i;
+                //Example with input = 5:
+                //First iteration: i = 1, answer = 1 * 1 = 1
+                //Second iteration: i = 2, answer = 1 * 2 = 2
+                //Third iteration: i = 3, answer = 2 * 3 = 6
+                //Fourth iteration: i = 4, answer = 6 * 4 = 24
+                //Fifth iteration: i = 5, answer = 24 * 5 = 120
+                //After the loop finishes, answer will hold the value of 120.
+                //It is the reverse of 5x4x3x2x1
+            }
+            Console.WriteLine("The answer of " + input + "! is: " + answer);
+        }
+        else if (select == 2) {
+            Console.WriteLine("EXPONENT CALCULATOR");
+            Console.WriteLine("Enter the base value: ");
+            int input2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the exponent value: ");
+            int power1 = Convert.ToInt32(Console.ReadLine());
+
+            int answer2 = 1;
+
+            for (int i = 1; i <= power1; i++) {
+                answer2 *= power1;
+            }
+            Console.WriteLine("The result of " + input2 + " to the power of " + power1 + " is: " + answer2);
+        }
+        else {
+            Console.WriteLine("Wrong input!");
+        }
+    }
+}
